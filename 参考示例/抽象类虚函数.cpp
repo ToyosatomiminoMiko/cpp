@@ -2,25 +2,48 @@
 
 using namespace std;
 
-class A
+class Shape
 {
 public:
-    virtual void fun() = 0;
-    int value;
+    virtual double S() = 0;
+    double l;
+    double h;
 };
 
-class B : public A
+class Triangle : public Shape
 {
 public:
-    virtual void fun()
+    Triangle(double l0, double h0)
     {
-        cout << "virtual function" << endl;
+        l = l0;
+        h = h0;
+    }
+    virtual double S()
+    {
+        return l * h / 2;
+    }
+};
+
+class Rectangle : public Shape
+{
+public:
+    Rectangle(double l0, double h0)
+    {
+        l = l0;
+        h = h0;
+    }
+    virtual double S()
+    {
+        return l * h;
     }
 };
 
 int main()
 {
-    B *b0 = new B;
-    b0->fun();
+    Rectangle *r0 = new Rectangle(4, 6);
+    Triangle *t0 = new Triangle(2, 3);
+
+    cout << r0->S() << endl;
+    cout << t0->S() << endl;
     return 0;
 }
