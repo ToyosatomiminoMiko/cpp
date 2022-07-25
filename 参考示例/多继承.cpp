@@ -5,10 +5,13 @@ using namespace std;
 class A
 {
 public:
-    A()
+    A(int v)
     {
         cout << "A" << endl;
+        value = v;
     }
+
+    int value;
 
 protected:
 private:
@@ -26,10 +29,10 @@ protected:
 private:
 };
 
-class C : public A ,public B
+class C : public A, public B
 {
 public:
-    C()
+    C() : A(1)
     {
         cout << "C" << endl;
     }
@@ -41,6 +44,6 @@ private:
 int main()
 {
     C *c0 = new C();
-
+    cout << c0->value << endl;
     return 0;
 }
