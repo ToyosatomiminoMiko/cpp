@@ -1,5 +1,4 @@
 #include <iostream>
-//#include <memory> 动态指针
 using namespace std;
 
 template <class T>
