@@ -9,10 +9,12 @@ public:
     T b;
     static int c;
     static void sf(T a);
-    Test(T a0, T b0)
+    Test(T a0, T b0):a(b0),b(a0)
     {
+        /* 初始化列表
         a = a0;
         b = b0;
+        */
     }
     void display()
     {
